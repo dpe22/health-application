@@ -3,8 +3,8 @@
 ### DB Schema
 
 
-| User | Devices | Diagnostics | 
-|-------------|------------|-----------|
+| Users | Devices | Diagnostics | 
+|:-------------|:------------|:-----------|
 | user_ID | device_ID | session_ID |
 | user_name | device_name | device_ID |
 | user_real_name | user_ID | user_ID |
