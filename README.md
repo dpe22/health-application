@@ -2,7 +2,7 @@
 
 ### DB Schema
 
-##### | User | Devices | Diagnostics |
+| User | Devices | Diagnostics |
 
 |-------------|------------|-----------|
 
