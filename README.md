@@ -3,7 +3,7 @@
 ### DB Schema
 
 
-| User | Devices | Diagnostics |
+| User | Devices | Diagnostics | 
 |-------------|------------|-----------|
 | user_ID | device_ID | session_ID |
 | user_name | device_name | device_ID |
@@ -13,4 +13,5 @@
 | user_role | | created_on |
 | user_address | |
 | user_height | |
+| user_gender | |
 | created_on | |
