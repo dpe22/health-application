@@ -1,17 +1,4 @@
 # health-application
 
 ### DB Schema
-
-
-| Users | Devices | Diagnostics | 
-|:-------------|:------------|:-----------|
-| user_ID | device_ID | session_ID |
-| user_name | device_name | device_ID |
-| user_real_name | user_ID | user_ID |
-| user_password | device_type | diagnostic_name |
-| user_email | created_on | diagnostic_value |
-| user_role | | created_on |
-| user_address | |
-| user_height | |
-| user_gender | |
-| created_on | |
+![HealthApp](https://user-images.githubusercontent.com/74585697/155168764-15864e0d-f2d6-426c-9106-7aa4f0234526.png)
