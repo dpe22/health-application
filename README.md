@@ -15,3 +15,6 @@
 - browse patients
 - assign medical devices to patients
 - schedule device measurements and alerts
+
+####
+use AWS virtual machine EC2
