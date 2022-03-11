@@ -1,3 +1,12 @@
+class Weekday(Enum):
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
+    THURSDAY = 4
+    FRIDAY = 5
+    SATURDAY = 6
+    SUNDAY = 7
+
 class FederalHoliday(AutoEnum):
   NewYear = "New Year's Day", 'absolute', Month.JANUARY, 1
   MLK = "Birthday of Martin Luther King, Jr.", 'relative', Month.JANUARY, Weekday.MONDAY, 3
@@ -34,6 +43,23 @@ class FederalHoliday(AutoEnum):
       for holiday in target_week:
           if Weekday(holiday.isoweekday()) is self.day:
               return holiday
+  
+  @classmethod
+  def next_20_business_days(cls, date, days=20):
+      """
+      Return the next 20 business days from date.
+      """
+      holidays = cls.year(date.year)
+      years = set([date.year])
+      while days > 0:
+          date = date.replace(delta_day=1)
+          if date.year not in years:
+              holidays.extend(cls.year(date.year))
+              years.add(date.year)
+          if Weekday(date.isoweekday()) in (Weekday.SATURDAY, Weekday.SUNDAY) or date in holidays:
+              continue
+          days -= 1
+      return date    
       
   @classmethod
   def year(cls, year):
