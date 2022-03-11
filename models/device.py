@@ -5,6 +5,7 @@ class Device(object):
   _status = str()
   _name = str()
   _measurement = int()
+  _unit = str()
   _patient_id = int()
   
   def set_id(self, num):
@@ -30,6 +31,12 @@ class Device(object):
     
   def get_measurement(self):
     return self._measurement
+  
+  def set_unit(self, unit):
+    self._unit = unit
+    
+  def get_unit(self)
+    return self._unit
   
   def set_patient_id(self, patient_id):
     self._patient_id = patient_id)
