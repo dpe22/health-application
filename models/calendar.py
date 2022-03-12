@@ -4,6 +4,20 @@
 from enum import Enum
 from enum import auto as AutoEnum
 
+class Month(Enum):
+    JANUARY = 1
+    FEBRUARY = 2
+    MARCH = 3
+    APRIL = 4
+    MAY = 5
+    JUNE = 6
+    JULY = 7
+    AUGUST = 8
+    SEPTEMBER = 9
+    OCTOBER = 10
+    NOVEMBER = 11
+    DECEMBER = 12
+
 class Weekday(Enum):
     MONDAY = 1
     TUESDAY = 2
