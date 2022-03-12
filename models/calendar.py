@@ -3,6 +3,7 @@
 
 from enum import Enum
 from enum import auto as AutoEnum
+from dbf import Date
 
 class Month(Enum):
     JANUARY = 1
