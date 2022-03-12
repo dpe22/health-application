@@ -1,7 +1,8 @@
 #original source for holiday tracking code https://stackoverflow.com/questions/22586895/python-enum-when-and-where-to-use
 #modified by dpe22
 
-import enum
+from enum import Enum
+from enum import auto as AutoEnum
 
 class Weekday(Enum):
     MONDAY = 1
