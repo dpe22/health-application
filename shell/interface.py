@@ -1,7 +1,41 @@
 # source tutorial to build a cmd line shell in python : https://code-maven.com/interactive-shell-with-cmd-in-python
+# https://medium.com/@moinahmedbgbn/a-basic-login-system-with-python-746a64dc88d6
 # code modified by dpe22
 
 from cmd import Cmd
+import hashlib
+
+def signup():
+    
+    email = input("Enter email address: ")
+    pwd = input("Enter password: ")
+    conf_pwd = input("Confirm password: ")
+    
+    if conf_pwd == pwd:
+        enc = conf_pwd.encode()
+        hash1 = hashlib.md5(enc).hexdigest()
+        with open("credentials.txt", "w") as f:
+            f.write(email + "\n")
+            f.write(hash1)
+        f.close()
+        print("You have registered successfully!")
+        return
+
+    else:
+        print("Password is not same as above! \n")
+
+def login():
+    email = input("Enter email: ")
+    pwd = input("Enter password: ")
+    auth = pwd.encode()
+    auth_hash = hashlib.md5(auth).hexdigest()
+    with open("credentials.txt", "r") as f:
+        stored_email, stored_pwd = f.read().split("\n")
+    f.close()
+    if email == stored_email and auth_hash == stored_pwd:
+        print("Logged in Successfully!")
+    else:
+         print("Login failed! \n")
 
 class MyPrompt(Cmd):
   prompt = '>>>>  '
@@ -17,13 +51,12 @@ class MyPrompt(Cmd):
     print('exit health-app with x, q, or ctrl-z')
     print()
     
-  def do_add(self, inp):
-    print("adding '{}'".format(inp))
-    print()
-    
-  def help_add(self):
-    print("add a new entry to the system.")
-    print()
+  def do_login(self, inp):
+    sub_cmd = login()
+    sub_cmd.cmdloop()
+
+  def help_login(self):
+    print("please provide a registered email and password to log in to Health App")
   
   def default(self, inp): 
     if inp == 'x' or inp == 'q':
