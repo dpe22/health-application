@@ -6,3 +6,5 @@ mypy
 pytest >= 4.0
 
 pandas
+calendar
+datetime
