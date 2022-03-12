@@ -3,7 +3,7 @@
 
 from enum import Enum
 from enum import auto as AutoEnum
-from dbf import Date, xrange, days_per_month
+from dbf import Date, xrange, days_per_month, one_day
 
 class Month(Enum):
     JANUARY = 1
