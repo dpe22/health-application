@@ -39,7 +39,7 @@ class Device(object):
     return self._unit
   
   def set_patient_id(self, patient_id):
-    self._patient_id = patient_id)
+    self._patient_id = patient_id
     
   def get_patient_id(self):
     return self._patient_id
