@@ -4,28 +4,33 @@
 from cmd import Cmd
 
 class MyPrompt(Cmd):
-  prompt = 'health-app> '
-  intro = "Welcome to Health App! Type ? to list commands"
+  prompt = '>>>>  '
+  intro = "\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n "
   
   def do_exit(self, inp): 
     '''exit health-app.'''
-    print("Goodbye")
+    print("\nGoodbye!")
+    print()
     return True
   
   def help_exit(self):
     print('exit health-app with x, q, or ctrl-z')
+    print()
     
   def do_add(self, inp):
     print("adding '{}'".format(inp))
+    print()
     
   def help_add(self):
     print("add a new entry to the system.")
+    print()
   
   def default(self, inp): 
     if inp == 'x' or inp == 'q':
       return self.do_exit(inp)
     
     print("Default: {}".format(inp))
+    print()
     
   do_EOF = do_exit
   help_EOF = help_exit
