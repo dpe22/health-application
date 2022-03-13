@@ -4,32 +4,62 @@
 
 from cmd import Cmd
 from login_system import *
+import sys
 
-class MyPrompt(Cmd):
+class SignedIn(Cmd):
   prompt = '>>>>  '
-  intro = "\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n "
+  intro = "\n ******************************************************** \n       Welcome Darren!   Type ? to list commands \n ******************************************************** \n "
   
   def do_exit(self, inp): 
     '''exit health-app.'''
-    print("\nGoodbye!")
-    print()
-    return True
+    sys.exit("\nGoodbye!\n")
   
   def help_exit(self):
     print('exit health-app with x, q, or ctrl-z')
     print()
 
-  def do_signup(self, inp):
-    sub_cmd = signup()
-    #sub_cmd.cmdloop()
+  def do_signout(self, inp):
+    sub_cmd = SignedOut()
+    sub_cmd.cmdloop()
 
-  def help_signup(self):
+  def help_signout(self):
+    print('log off this user account')
+    print()
+  
+  def default(self, inp): 
+    if inp == 'x' or inp == 'q':
+      return self.do_exit(inp)
+    
+    print("Default: {}".format(inp))
+    print()
+    
+  do_EOF = do_exit
+  help_EOF = help_exit
+
+class SignedOut(Cmd):
+  prompt = '>>>>  '
+  intro = "\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n "
+  
+  def do_exit(self, inp): 
+    '''exit health-app.'''
+    sys.exit("\nGoodbye!\n")
+  
+  def help_exit(self):
+    print('exit health-app with x, q, or ctrl-z')
+    print()
+
+  def do_register(self, inp):
+    sub_cmd = signup()
+
+  def help_register(self):
     print('create a new user account')
     print()
     
   def do_login(self, inp):
     sub_cmd = login()
-    #sub_cmd.cmdloop()
+    sub_cmd = SignedIn()
+    sub_cmd.cmdloop()
+
 
   def help_login(self):
     print("please provide a registered email and password to log in to Health App")
@@ -45,4 +75,4 @@ class MyPrompt(Cmd):
   help_EOF = help_exit
   
 if __name__ == '__main__':
-  MyPrompt().cmdloop()
+  SignedOut().cmdloop()
