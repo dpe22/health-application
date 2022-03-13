@@ -30,15 +30,15 @@ class SignedIn(Cmd):
     if inp == 'x' or inp == 'q':
       return self.do_exit(inp)
     
-    print("Default: {}".format(inp))
-    print()
+    print("Command not recognized: {}\n".format(inp))
+    print("Type ? to list commands")
     
   do_EOF = do_exit
   help_EOF = help_exit
 
 class SignedOut(Cmd):
   prompt = '>>>>  '
-  intro = "\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n "
+  intro = "\n ******************************************************** \n\n              Welcome to dpe22's Health App! \n\n ******************************************************** \n\nType ? to list commands"
   
   def do_exit(self, inp): 
     '''exit health-app.'''
@@ -68,8 +68,8 @@ class SignedOut(Cmd):
     if inp == 'x' or inp == 'q':
       return self.do_exit(inp)
     
-    print("Default: {}".format(inp))
-    print()
+    print("Command not recognized: {}\n".format(inp))
+    print("Type ? to list commands")
     
   do_EOF = do_exit
   help_EOF = help_exit
