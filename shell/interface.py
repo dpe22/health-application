@@ -49,7 +49,7 @@ class SignedOut(Cmd):
     print()
 
   def do_register(self, inp):
-    sub_cmd = signup()
+    sub_cmd = register()
 
   def help_register(self):
     print('create a new user account')
