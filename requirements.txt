@@ -8,3 +8,5 @@ pytest >= 4.0
 pandas
 datetime
 dbf
+getpass
+
