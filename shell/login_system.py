@@ -18,6 +18,9 @@ def signup():
 
     else:
         print("Password is not same as above! \n")
+        print()
+        print("\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n ")
+  
 
 def login():
     email = input("Enter email: ")
@@ -31,3 +34,5 @@ def login():
         print("Logged in Successfully!")
     else:
          print("Login failed! \n")
+         print()
+         print("\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n ")

@@ -18,10 +18,18 @@ class MyPrompt(Cmd):
   def help_exit(self):
     print('exit health-app with x, q, or ctrl-z')
     print()
+
+  def do_signup(self, inp):
+    sub_cmd = signup()
+    #sub_cmd.cmdloop()
+
+  def help_signup(self):
+    print('create a new user account')
+    print()
     
   def do_login(self, inp):
     sub_cmd = login()
-    sub_cmd.cmdloop()
+    #sub_cmd.cmdloop()
 
   def help_login(self):
     print("please provide a registered email and password to log in to Health App")
