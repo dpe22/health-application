@@ -1,10 +1,11 @@
 import hashlib
+import getpass
 
 def signup():
     
     email = input("Enter email address: ")
-    pwd = input("Enter password: ")
-    conf_pwd = input("Confirm password: ")
+    pwd = getpass.getpass("Enter password: ")
+    conf_pwd = getpass.getpass("Confirm password: ")
     
     if conf_pwd == pwd:
         enc = conf_pwd.encode()
@@ -24,7 +25,7 @@ def signup():
 
 def login():
     email = input("Enter email: ")
-    pwd = input("Enter password: ")
+    pwd = getpass.getpass("Enter password: ")
     auth = pwd.encode()
     auth_hash = hashlib.md5(auth).hexdigest()
     with open("credentials.txt", "r") as f:
