@@ -16,15 +16,16 @@ def login():
     con = sqlite3.connect('users.db')
     cur = con.cursor()
 
-    [stored_username, stored_pwd] = cur.execute("SELECT username, password FROM users where username =?",(username,))
-
-
-    if username == stored_username:
-        if auth_hash == stored_pwd:
+    cur.execute("SELECT password FROM users where username =?",(username,))
+    data = cur.fetchone()
+    password = data[0]
+    if len(data) == 0:
+        print("Invalid Username")
+        return False
+    else: 
+        if auth_hash == password:
             print("Logged in Successfully!")
+            return True
         else:
-            print("Incorrect Password")
-    else:
-         print("Invalid Username\n")
-         print()
-         print("\n ******************************************************** \n              Welcome to dpe22's Health App! \n                 Type ? to list commands \n ******************************************************** \n ")
+            print("Incorrect Password\n")
+            return False

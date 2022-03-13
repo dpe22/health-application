@@ -38,7 +38,7 @@ class SignedIn(Cmd):
 
 class SignedOut(Cmd):
   prompt = '>>>>  '
-  intro = "\n ******************************************************** \n\n              Welcome to dpe22's Health App! \n\n ******************************************************** \n\nType ? to list commands"
+  intro = "\n ******************************************************** \n\n     Welcome to the Health App! Sign in to get started \n\n ******************************************************** \n\nType ? to list commands"
   
   def do_exit(self, inp): 
     '''exit health-app.'''
@@ -56,9 +56,9 @@ class SignedOut(Cmd):
     print()
     
   def do_login(self, inp):
-    sub_cmd = login()
-    sub_cmd = SignedIn()
-    sub_cmd.cmdloop()
+    if (login() == True):
+      sub_cmd = SignedIn()
+      sub_cmd.cmdloop()
 
 
   def help_login(self):

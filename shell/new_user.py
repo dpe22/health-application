@@ -39,7 +39,7 @@ class NewUser(npyscreen.NPSApp):
                (firstName text, lastName text, role text, email text, username text, password text, createdOn date)''')
 
         # Insert a row of data
-        cur.execute("INSERT INTO users VALUES (?,?,?,?,?,?,?)",(str(fn),str(ln),str(ms2),str(em),str(un),str(hash1),str(dt)))
+        cur.execute("INSERT INTO users VALUES (?,?,?,?,?,?,?)",(str(fn.value),str(ln.value),str(ms2.value),str(em.value),str(un.value),str(hash1),str(dt.value)))
 
         # Save (commit) the changes
         con.commit()
