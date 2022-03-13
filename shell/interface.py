@@ -8,7 +8,7 @@ import sys
 
 class SignedIn(Cmd):
   prompt = '>>>>  '
-  intro = "\n ******************************************************** \n       Welcome User!   Type ? to list commands \n ******************************************************** \n "
+  intro = "\n\nWelcome User! <Type ? to list commands> \n\n "
   
   def do_exit(self, inp): 
     '''exit health-app.'''
