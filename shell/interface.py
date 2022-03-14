@@ -5,10 +5,28 @@
 from cmd import Cmd
 from login_system import *
 import sys
+import new_device
+import new_user
 
 class SignedIn(Cmd):
   prompt = '>>>>  '
   intro = "\n\nWelcome User! <Type ? to list commands> \n\n "
+
+  def do_add_user(self, inp):
+    app = new_user.NewUser()
+    app.run()
+
+  def help_add_user(self):
+    print('create a new user account in Health App')
+    print()
+
+  def do_add_device(self, inp):
+    app = new_device.NewDevice()
+    app.run()
+
+  def help_add_device(self):
+    print('create a new device in Health App')
+    print()
   
   def do_exit(self, inp): 
     '''exit health-app.'''

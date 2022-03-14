@@ -3,7 +3,7 @@ import sqlite3
 
 class NewDevice(npyscreen.NPSApp):
     def main(self):
-        # These lines create the form and populate it with widgets.
+        # These lines create the new device form and populate it with widgets.
         F  = npyscreen.Form(name = "Add a new device to Health App",)
         dn = F.add(npyscreen.TitleText, name = "Device Name:",)
         id  = F.add(npyscreen.TitleText, name = "Serial Number:")
@@ -15,7 +15,7 @@ class NewDevice(npyscreen.NPSApp):
         ms2= F.add(npyscreen.TitleSelectOne, max_height =-2, name="Select type of measurement:",
                 values = ["Pulse","Temperature","Blood Pressure","Blood Sugar","Height","Weight"], scroll_exit=True)
 
-        # This lets the user interact with the Form.
+        # This lets the user interact with the form.
         F.edit()
 
         # Connect to local database SQLite3

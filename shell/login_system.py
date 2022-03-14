@@ -13,15 +13,19 @@ def login():
     auth = pwd.encode()
     auth_hash = hashlib.md5(auth).hexdigest()
 
+    # connect to local sqlite3 database
     con = sqlite3.connect('users.db')
     cur = con.cursor()
 
+    # look for username
     cur.execute("SELECT password FROM users where username =?",(username,))
     data = cur.fetchone()
     password = data[0]
     if len(data) == 0:
         print("Invalid Username")
         return False
+        
+    # verify password
     else: 
         if auth_hash == password:
             print("Logged in Successfully!")

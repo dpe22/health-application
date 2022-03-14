@@ -5,6 +5,7 @@ import getpass
 
 class NewUser(npyscreen.NPSApp):
     def main(self):
+        # create a password
         pwd = getpass.getpass("Enter new password: ")
         conf_pwd = getpass.getpass("\nConfirm new password: ")
 
@@ -16,8 +17,7 @@ class NewUser(npyscreen.NPSApp):
             print("passwords must match - please try again")
             return
 
-        # These lines create the form and populate it with widgets.
-        # A fairly complex screen in only 8 or so lines of code - a line for each control.
+        # These lines create the new user form and populate it with widgets.
         F  = npyscreen.Form(name = "Add a new user to Health App",)
         un = F.add(npyscreen.TitleText, name = "Username:",)
         fn  = F.add(npyscreen.TitleText, name = "First Name:",)
@@ -27,10 +27,10 @@ class NewUser(npyscreen.NPSApp):
         ms2= F.add(npyscreen.TitleMultiSelect, max_height =-2, name="Select role(s) using 'x':",
                 values = ["Patient","Relative","Practitioner","Administrator","Device Developer"], scroll_exit=True)
 
-        # This lets the user interact with the Form.
+        # This lets the user interact with the form.
         F.edit()
 
-
+        # connect to the local users database (sqlite3)
         con = sqlite3.connect('users.db')
         cur = con.cursor()
 
@@ -44,8 +44,7 @@ class NewUser(npyscreen.NPSApp):
         # Save (commit) the changes
         con.commit()
 
-        # We can also close the connection if we are done with it.
-        # Just be sure any changes have been committed or they will be lost.
+        # Close the connection
         con.close()
 
         # print(ms2.get_selected_objects())
