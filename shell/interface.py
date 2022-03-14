@@ -67,7 +67,11 @@ class SignedOut(Cmd):
     print()
 
   def do_register(self, inp):
-    sub_cmd = register()
+    code = input("Enter admin code (this is a static code delivered in person = 1234): ")
+    if code == "1234":
+      sub_cmd = register()
+    else: 
+      print("Unauthorized Access Denied")
 
   def help_register(self):
     print('create a new user account')
