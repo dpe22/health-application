@@ -10,6 +10,5 @@ datetime
 dbf
 flask
 npyscreen
-sqlite
 click
 # windows users add 'windows-curses'
