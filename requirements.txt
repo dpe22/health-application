@@ -8,5 +8,8 @@ pytest >= 4.0
 pandas
 datetime
 dbf
+flask
 npyscreen
+sqlite3
+click
 # windows users add 'windows-curses'

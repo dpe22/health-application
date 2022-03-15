@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Add a New Device{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="device_name">Device Name</label>
+    <input name="device_name" id="device_name" value="{{ request.form['device_name'] }}" required>
+    <label for="measurement">Measurement</label>
+    <input name="measurement" id="measurement" value="{{ request.form['measurement'] }}" required>
+    <label for="units">Units</label>
+    <input name="units" id="units" value="{{ request.form['units'] }}" required>
+    <label for="patient_id">Patient ID ({{g.user['id']}})</label>
+    <input name="patient_id" id="patient_id" value="{{g.user['id']}}" required>
+
+    <input type="submit" value="Save">
+  </form>
+{% endblock %}

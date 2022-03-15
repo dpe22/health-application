@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Edit "{{ device['device_name'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="device">
+    <label for="device_name">Device Name</label>
+    <input name="device_name" id="device_name"
+      value="{{ request.form['device_name'] or device['device_name'] }}" required>
+    <label for="measurement">Measurement</label>
+    <input name="measurement" id="measurement" value="{{ request.form['measurement'] }}" required>
+    <label for="units">Units</label>
+    <input name="units" id="units" value="{{ request.form['units'] }}" required>
+    <input type="submit" value="Save">
+  </form>
+  <hr>
+  <form action="{{ url_for('dashboard.delete', id=device['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+  </form>
+{% endblock %}
