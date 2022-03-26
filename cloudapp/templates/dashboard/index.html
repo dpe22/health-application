@@ -1,27 +1,71 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Welcome {{ g.user['firstname'] }} {{ g.user['lastname'] }}{% endblock %}</h1>
   {% if g.user %}
-    <a class="action" href="{{ url_for('dashboard.create') }}">Add a New Device</a>
+    <h1>{% block title %}Dashboard for {{ g.user['firstname'] }} {{ g.user['lastname'] }}{% endblock %}</h1>
   {% endif %}
-{% endblock %}
 
-{% block content %}
-  {% for device in devices %}
-    <article class="post">
-      <header>
-        <div>
-          <h1>{{ device['device_name'] }}: {{ device['measurement'] }} {{ device['units'] }}</h1>
-          <div class="about">{{ device['name'] }} assigned to {{ g.user['firstname'] }} {{ g.user['lastname'] }} on {{ g.user['created'].strftime('%Y-%m-%d') }}</div>
-        </div>
-        {% if g.user['id'] == device['patient_id'] %}
-          <a class="action" href="{{ url_for('dashboard.update', id=device['id']) }}">Edit</a>
-        {% endif %}
-      </header>
-    </article>
-    {% if not loop.last %}
-      <hr>
+  {% if not g.user %}
+    <h1>Welcome to the my project for EC530!</h1>
+    <div class="about">Log in or register a new user to get started</div>
+  {% endif %}
+
+  {% if g.user['patient'] %}
+    <a class="action" href="{{ url_for('dashboard.index') }}">Chat</a>
+    <a class="action" href="{{ url_for('dashboard.index') }}">Calendar</a>
+    <a class="action" href="{{ url_for('dashboard.index') }}">Voice Call</a>
+  {% endif %}
+  {% if g.user['practitioner'] %}
+    <a class="action" href="{{ url_for('dashboard.create') }}">My Patients</a>
+  {% endif %}
+  {% if g.user['admin'] %}
+    <a class="action" href="{{ url_for('auth.register') }}">All Users</a>
+  {% else %}
+    <a class="action" href="{{ url_for('dashboard.create') }}">My Devices</a>
+  {% endif %}
+
+  {% endblock %}
+
+  {% block content %}
+  <div class="about"><br>Administrator: {{g.user['admin']}}  ||  Practitioner: {{g.user['practitioner']}}  ||  Engineer: {{g.user['engineer']}}  ||  Patient: {{g.user['patient']}}</div>
+  {% if g.user['patient'] %}
+    <h2>Connected Medical Devices</h2>
+    {% for device in devices %}
+      <article class="post">
+        <header>
+          <div>
+            <h1>{{ device['device_name'] }}: {{ device['measurement'] }} {{ device['units'] }}</h1>
+            <div class="about">{{ device['name'] }} assigned to {{ g.user['firstname'] }} {{ g.user['lastname'] }} on {{ g.user['created'].strftime('%Y-%m-%d') }}</div>
+          </div>
+          {% if g.user['id'] == device['patient_id'] %}
+            <a class="action" href="{{ url_for('dashboard.update', id=device['id']) }}">Edit</a>
+          {% endif %}
+        </header>
+      </article>
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+    {% endfor %}
+    <h4>Please send us a chat or voice message to have a practitioner add a new medical device to your account</h4>
+  {% endif %}
+
+  {% if g.user['practitioner'] == TRUE %}
+    {% for device in devices %}
+      <article class="post">
+        <header>
+          <div>
+            <h1>{{ device['device_name'] }}: {{ device['measurement'] }} {{ device['units'] }}</h1>
+            <div class="about">{{ device['name'] }} assigned to {{ g.user['firstname'] }} {{ g.user['lastname'] }} on {{ g.user['created'].strftime('%Y-%m-%d') }}</div>
+          </div>
+          {% if g.user['id'] == device['patient_id'] %}
+            <a class="action" href="{{ url_for('dashboard.update', id=device['id']) }}">Edit</a>
+          {% endif %}
+        </header>
+      </article>
+      {% if not loop.last %}
+        <hr>
+      {% endif %}
+      {% endfor %}
     {% endif %}
-  {% endfor %}
+
 {% endblock %}

@@ -1,22 +1,51 @@
 {% extends 'base.html' %}
 
 {% block header %}
-  <h1>{% block title %}Register{% endblock %}</h1>
+  <h1>{% block title %}Please provide the following information: {% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
   <form method="post">
-    <label for="username">Username</label>
+    <label for="username">New Username</label>
     <input name="username" id="username" required>
-    <label for="password">Password</label>
+
+    <label for="password">New Password</label>
     <input type="password" name="password" id="password" required>
+
     <label for="firstname">First Name</label>
     <input name="firstname" id="firstname" required>
+    
     <label for="lastname">Last Name</label>
     <input name="lastname" id="lastname" required>
-    <label for="role">Role</label>
-    <input name="role" id="role" required>
 
-    <input type="submit" value="Register">
+    <label for="DOB">Date of Birth</label>
+    <input type="date" name="DOB" id="DOB" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" name="email" id="email" required>
+
+    <h1>Please select user role(s):</h1>
+
+    <div>
+      <input type="checkbox" id="admin" name="admin" value="TRUE" checked>
+      <label for="admin">Administrator</label>
+    </div>
+    
+    <div>
+      <input type="checkbox" id="practitioner" name="practitioner" value="TRUE">
+      <label for="practitioner">Practitioner</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="patient" name="patient"  value="TRUE">
+      <label for="patient">Patient</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="engineer" name="engineer"  value="TRUE">
+      <label for="engineer">Device Engineer or Data Scientist</label>
+    </div>
+
+    <input type="submit" value="Submit">
   </form>
 {% endblock %}

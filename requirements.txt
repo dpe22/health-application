@@ -4,11 +4,10 @@ matplotlib >= 3.0
 flake8
 mypy
 pytest >= 4.0
-
+gunicorn == 19.3.0
 pandas
 datetime
 dbf
 flask
 npyscreen
 click
-# windows users add 'windows-curses'

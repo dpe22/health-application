@@ -18,7 +18,11 @@ def register():
         password = request.form['password']
         firstname = request.form['firstname']
         lastname = request.form['lastname']
-        role = request.form['role']
+        email = request.form['email']
+        patient = request.form.get('patient')
+        admin = request.form.get('admin')
+        practitioner = request.form.get('practitioner')
+        engineer = request.form.get('engineer')
         db = get_db()
         error = None
 
@@ -30,14 +34,23 @@ def register():
             error = 'First name is required'
         elif not lastname:
             error = 'Last name is required'
-        elif not role:
-            error = 'Role is required'
+        elif not (patient=='TRUE' or admin=='TRUE' or practitioner=='TRUE' or engineer=='TRUE'):
+            error = 'Please select at least one user role'
+
+        #if not patient: 
+        #    patient = 'FALSE'
+        #if not practitioner:
+        #    practitioner = 'FALSE'
+        #if not admin:
+        #    admin = 'FALSE'
+        #if not engineer:
+        #    engineer = 'FALSE'
 
         if error is None:
             try:
                 db.execute(
-                    "INSERT INTO user (username, password, firstname, lastname, role) VALUES (?, ?, ?, ?, ?)",
-                    (username, generate_password_hash(password), firstname, lastname, role),
+                    "INSERT INTO user (username, password, firstname, lastname, admin, practitioner, patient, engineer) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                    (username, generate_password_hash(password), firstname, lastname, admin, practitioner, patient, engineer),
                 )
                 db.commit()
             except db.IntegrityError:
