@@ -31,5 +31,6 @@ use AWS virtual machine EC2
 ### Log in page
 ![image](https://user-images.githubusercontent.com/74585697/160617334-6cb6dfbf-5939-4579-abb6-c2c08a89e22e.png)
 
-### Logged in as Admin | Practitioner | Patient | Device Engineer / Data Scientist
+### Logged in as Patient no devices
+![image](https://user-images.githubusercontent.com/74585697/160618819-5ebe73ae-7a80-4564-82b9-b37938a23d5c.png)
 
