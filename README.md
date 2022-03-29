@@ -28,8 +28,8 @@ use AWS virtual machine EC2
 ### Register a new user page
 ![image](https://user-images.githubusercontent.com/74585697/160616998-c19ba3db-d680-4d26-8bc9-ea74d75445b2.png)
 
-### Log in
+### Log in page
 ![image](https://user-images.githubusercontent.com/74585697/160617334-6cb6dfbf-5939-4579-abb6-c2c08a89e22e.png)
 
-### Logged In As Admin | Practitioner | Patient | Device Engineer or Data Scientist
+### Logged in as Admin | Practitioner | Patient | Device Engineer / Data Scientist
 
