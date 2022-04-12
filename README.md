@@ -37,6 +37,10 @@ Open a browser and navigate to localhost:5000
 ####
 use AWS virtual machine EC2
 
+## SQLite3 Database
+
+![image](https://user-images.githubusercontent.com/74585697/162985742-79879422-3463-4847-8483-af2009b78f65.png)
+
 ## DEMO
 ### Splash page
 ![image](https://user-images.githubusercontent.com/74585697/160616724-ae141602-1765-4786-aa24-88a505c6c62a.png)
