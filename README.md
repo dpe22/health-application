@@ -50,3 +50,9 @@ use AWS virtual machine EC2
 ### Logged in as Patient no devices
 ![image](https://user-images.githubusercontent.com/74585697/160618819-5ebe73ae-7a80-4564-82b9-b37938a23d5c.png)
 
+## Vulnerabilities
+### SQL Injection
+Although the login interaction is safe, once logged in the database tables are vulnerable to SQL injection. Note here the database locking after tring to add a device with DROP TABLE in the name field.
+
+![image](https://user-images.githubusercontent.com/74585697/162985231-449e88d3-f959-45ba-8a0e-14973026f2fe.png)
+
