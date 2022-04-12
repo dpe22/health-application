@@ -2,8 +2,11 @@
 
 [![Python Test](https://github.com/dpe22/health-application/actions/workflows/python-test.yml/badge.svg)](https://github.com/dpe22/health-application/actions/workflows/python-test.yml)
 
-### DB Schema
+### DB Schema Original Planned
 ![HealthApp](https://user-images.githubusercontent.com/74585697/155168764-15864e0d-f2d6-426c-9106-7aa4f0234526.png)
+
+### DB Schema Actual
+![image](https://user-images.githubusercontent.com/74585697/162868839-248733f5-2924-4e9e-aff8-fb243db1b2a4.png)
 
 ### User Stories
 
