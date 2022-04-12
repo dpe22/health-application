@@ -4,9 +4,13 @@
 
 ## Getting Started
 Starting in the root "health-application" folder
+
 > set FLASK_APP=cloudapp
+
 > set FLASK_ENV=development
+
 > flask run
+
 Open a browser and navigate to localhost:5000
 
 ### DB Schema Planned
