@@ -13,6 +13,8 @@ Starting in the root "health-application" folder
 
 Open a browser and navigate to localhost:5000
 
+## Architecture 
+
 ### DB Schema Planned
 ![HealthApp](https://user-images.githubusercontent.com/74585697/155168764-15864e0d-f2d6-426c-9106-7aa4f0234526.png)
 
