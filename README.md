@@ -63,3 +63,5 @@ Although the login interaction is safe, once logged in the database tables are v
 
 ![image](https://user-images.githubusercontent.com/74585697/162985231-449e88d3-f959-45ba-8a0e-14973026f2fe.png)
 
+## Deployment
+Attempted to containerize the application using Docker and deploy to AWS Lightsail. Went down a rabbit hole with trying to change my weebly domain monkeyselfies.com to run the containerized application by modifying the DNS record to point back to AWS. Very messy. Probably much easier to deploy using AWS EC2. Work in progress. 
