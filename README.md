@@ -54,6 +54,9 @@ use AWS virtual machine EC2
 ### Logged in as Patient no devices
 ![image](https://user-images.githubusercontent.com/74585697/160618819-5ebe73ae-7a80-4564-82b9-b37938a23d5c.png)
 
+### Logged in as Patient w/devices
+Still working on making sure that device table is not subject to vulnerabilities below. While testing I accidentally deleted the table, easy to fix. I am also working on making sure that the user experience is different for admin, patient, practitioner and engineer roles: specifically that each role sees only devices assigned to that role. 
+
 ## Vulnerabilities
 ### SQL Injection
 Although the login interaction is safe, once logged in the database tables are vulnerable to SQL injection. Note here the database locking after tring to add a device with DROP TABLE in the name field.
