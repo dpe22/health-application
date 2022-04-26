@@ -9,6 +9,8 @@ Starting in the root "health-application" folder
 
 > set FLASK_ENV=development
 
+> flask init-db
+
 > flask run
 
 Open a browser and navigate to localhost:5000
