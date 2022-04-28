@@ -4,10 +4,15 @@
 
 ## Getting Started (Local Shell Version #1)
 Make sure you have windows-curses module installed if on Windows
+
 Launch interface.py from the local shell folder
+
 credentials.txt stores usernames and hashed passwords
+
 devices.db stores device information
+
 users.db stores user information
+
 
 ### Demo Local V1
 ###### Splash Terminal
