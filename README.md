@@ -20,6 +20,7 @@ Launch interface.py from the local shell folder
 ![image](https://user-images.githubusercontent.com/74585697/165771975-071fed95-ce02-4b1c-81bb-1530fe311817.png)
 
 ###### Add a device
+![image](https://user-images.githubusercontent.com/74585697/165773752-a920580c-e4f4-4ca4-a259-118ba479b41e.png)
 
 
 ## Getting Started (Web App Version #2)
