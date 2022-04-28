@@ -2,7 +2,27 @@
 
 [![Python Test](https://github.com/dpe22/health-application/actions/workflows/python-test.yml/badge.svg)](https://github.com/dpe22/health-application/actions/workflows/python-test.yml)
 
-## Getting Started
+## Getting Started (Local Shell Version #1)
+Make sure you have windows-curses module installed if on Windows
+
+Launch interface.py from the local shell folder
+
+![image](https://user-images.githubusercontent.com/74585697/165770920-aab7c276-0d09-478c-ad4e-12ad4812a92b.png)
+
+### Demo Local V1
+###### Splash Terminal
+![image](https://user-images.githubusercontent.com/74585697/165771008-40309cf6-e9b7-4255-a34f-578a97f482b1.png)
+
+###### Register a new user
+![image](https://user-images.githubusercontent.com/74585697/165771557-f2ca4b1a-bef4-4869-b269-1f3682f39f77.png)
+
+###### Logged in
+![image](https://user-images.githubusercontent.com/74585697/165771975-071fed95-ce02-4b1c-81bb-1530fe311817.png)
+
+###### Add a device
+
+
+## Getting Started (Web App Version #2)
 Starting in the root "health-application" folder
 
 > set FLASK_APP=cloudapp
