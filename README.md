@@ -2,6 +2,10 @@
 
 [![Python Test](https://github.com/dpe22/health-application/actions/workflows/python-test.yml/badge.svg)](https://github.com/dpe22/health-application/actions/workflows/python-test.yml)
 
+My first attempt was compeletly local in python terminal, but it didn't utilize APIs or Flask and had no security.
+
+My second attempt is a web application in python, HTML, and CSS that relies on Get and Post methods using FLASK and Docker to containerize the app and make it deployable and more secure (still vulnerable to SQL injection once logged in however.)
+
 ## Getting Started (Local Shell Version #1)
 Make sure you have windows-curses module installed if on Windows
 
